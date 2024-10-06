@@ -16,48 +16,19 @@ A plain HTML page with the content "Hello, Docker! by Kiran M".
 
 An Nginx configuration file that serves the `index.html` page and listens on port 80.
 
-#### **Dockerfile**
+Created the html and conf file for nginx:
+![image](https://github.com/user-attachments/assets/eabd5593-379c-4ca8-96a9-dda29287292f)
 
-A Dockerfile that defines the Docker image. It uses an official Nginx base image, copies the `index.html` and `nginx.conf` files into the container, and ensures that the Nginx server is started when the container is run.
+ 
+Installed docker on EC2:
+ ![image](https://github.com/user-attachments/assets/b0efbd32-b4c3-439f-8bd6-8d2ee0fea5d8)
 
-## **Building the Docker Image**
+Created Docker Image:
+ ![image](https://github.com/user-attachments/assets/18c6e8d2-5cc7-42a1-a5e0-7eb166d48c5d)
 
-To build the Docker image, run the following command in the terminal:
+Docker Images
+ ![image](https://github.com/user-attachments/assets/e5a8278f-9786-4b7d-8661-cbb0cc676e64)
 
-## Steps to Build and Run
+Nginix server running from Doker image:
+ ![image](https://github.com/user-attachments/assets/a49b5bc1-1dd4-4b93-bb91-2e2fa048ba85)
 
-1. Build the Docker image:
-    ```bash
-    docker build -t nginx-html .
-    ```
-    ![docker-build](./screenshots/Docker-build.png)
-
-2. Run the container locally:
-    ```bash
-    docker run -d -p 8080:80 --name nginx-container nginx-html
-    ```
-   ![docker-run](./screenshots/docker-run.png)
-3. Checking the Nginx with EC2 ip address:
-   ![docker-web](./screenshots/docker-output.png)
-
-Visit `http://54.185.66.181:8080/` to see the HTML page in action.
-
-## Pushing the Image to Amazon ECR
-
-1. **Login to ECR:** 
-  ``` bash
-  aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 975050024946.dkr.ecr.us-west-2.amazonaws.com
-  ```
-2. **Tag the image:**
-   ```bash
-   docker tag nginx-html:latest 975050024946.dkr.ecr.us-west-2.amazonaws.com/lucky-repos:latest
-   ```
-3. **Push the image:**
-  ```bash
-  docker push 975050024946.dkr.ecr.us-west-2.amazonaws.com/lucky-repos:latest
-  ```
-  ![ecr-push](./screenshots/ecr-push.png)
-
-[Public ECR Repo URL](https://us-west-2.console.aws.amazon.com/ecr/repositories/private/975050024946/lucky-repos/_/image/sha256:45e5995fff486bb1eb04f2f62ebe777632c294d50b5c3493b5981e3929610b1c/details?region=us-west-2)
-
-[ECR Image URI](975050024946.dkr.ecr.us-west-2.amazonaws.com/lucky-repos:latest)
