@@ -36,7 +36,5 @@ Created Repo on ECR:
  ![image](https://github.com/user-attachments/assets/e6f2bcdb-f7b2-45e9-942d-0d4bd94de6f4)
 
 Pushed the Docker image onto ECR:
- ![image](https://github.com/user-attachments/assets/359d00d9-aacb-40be-8ffd-4d418c803b26)
-
-
+![image](https://github.com/user-attachments/assets/c3effddb-e29f-4516-8a0e-964032080dc9)
 
