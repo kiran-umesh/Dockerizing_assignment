@@ -1,86 +1,26 @@
-# Dockerized Nginx with Custom HTML and HTTPS Support
+**Docker Compose Evidences:** 
+**Basic HTML Page **: index.html
+Content of this file is a simple HTML page, e.g., "Hello, Docker ! " 
 
-## Objective
-
-This project demonstrates how to Dockerize a simple HTML page using Nginx as a web server. The project also includes support for HTTPS and Docker Compose to streamline the deployment process.
-
-## Requirements
-
-### 1. Basic HTML Page
-- **File**: `index.html`
-- Content of this file is a simple HTML page, e.g., "Hello, Docker!"
-  
-### 2. Nginx Configuration
-- **File**: `nginx.conf`
-- This file is used to configure Nginx to serve the `index.html` file on port 80 and enable HTTPS support on port 443.
-
-### 3. Dockerfile
-- **File**: `Dockerfile`
-- This Dockerfile is responsible for:
-  - Using an official Nginx base image.
-  - Copying the `index.html` and `nginx.conf` files into the container.
-  - Configuring Nginx to serve static content and enable HTTPS.
-
-### 4. Docker Compose
-- **File**: `docker-compose.yml`
-- This file builds the Docker image and runs the container with Nginx serving the HTML page on both HTTP (port 80) and HTTPS (port 443).
-
-## Folder Structure
-
-```bash
-.
-├── Dockerfile
-├── docker-compose.yml
-├── html
-│   ├── index.html
-│   └── static
-│       ├── style.css
-│       └── script.js
-├── nginx.conf
-└── ssl
-    ├── nginx-selfsigned.crt
-    └── nginx-selfsigned.key
-
-```
-#### Files Details
-- **html/index.html:** The HTML page to be served.
-- **html/static/:** basic CSS and js file
-- **nginx.conf:** The Nginx configuration file to serve the index.html page.
-- **ssl/:** Folder containing SSL certificate and key files for HTTPS.
-- **Dockerfile:** The Dockerfile to build the Docker image.
-- **docker-compose.yml:** Docker Compose file to define and run the container.
-- **README.md:** Documentation for the project.
+**Nginx Configuration** : nginx.conf
+This file is used to configure Nginx to serve the index.html file on port 80 and enable HTTPS support on port 443. 
 
 
-### How to Build and Run the Docker Image
-#### Step 1: Build the Docker Image:
-```
-docker build -t my-nginx-html .
-```
-#### Step 2: Run the Docker Container
-```
-docker run -d -p 80:80 -p 443:443 --name my-nginx-container my-nginx-html
-```
--  -d option runs the container in detached mode.
--  -p 80:80 option maps port 80 on the container to port 80 on the host.
--  -p 443:443 option maps port 443 for HTTPS.
+**Dockerfile build: image**
 
-![docker-build](./screenshots/Docker-build-run.png)
+![image](https://github.com/user-attachments/assets/313b2d7b-6815-4d8c-9523-094cdc052e8f)
 
-#### Step 3: Run with Docker Compose
-```
-docker compose up -d
-```
-![docker-compose](./screenshots/Docker-compose-run.png)
-![docker-compose](./screenshots/output-port80.png)
-![docker-compose](./screenshots/cert.png)
-![docker-compose](./screenshots/output-port443.png)
 
-## HTTPS Support
-This project includes support for HTTPS using a self-signed SSL certificate. The certificate and key files are stored in the ssl/ directory.
+**Docker Compose**
 
-### To Generate Self-Signed Certificates:
-Generating ssl certificates 
-```
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ssl/nginx-selfsigned.key -out ssl/nginx-selfsigned.crt
-```
+![image](https://github.com/user-attachments/assets/aa552d8d-6421-4e28-9495-06a8082b50c3)
+
+**Cert:**
+![image](https://github.com/user-attachments/assets/db473275-ec2f-4152-b9d4-dca59f48d192)
+
+**Output directed to Port 80 (unsecured):**
+![image](https://github.com/user-attachments/assets/4ffae411-1f22-4334-b250-203715d67626)
+
+**Output directed to port 443 (secrured):**
+
+![image](https://github.com/user-attachments/assets/8a7ce2fa-42fb-452b-9d40-f292a8b899b3)
