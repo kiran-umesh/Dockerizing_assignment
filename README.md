@@ -1,40 +1,22 @@
-# Graded Assignment on Dockerizing a Plain HTML Page With Nginx
-
-
-# Dockerized Nginx Serving HTML
-
-This project contains a simple HTML page served using Nginx in a Docker container.
-
-
-## **Files**
-
-#### **index.html**
-
-A plain HTML page with the content "Hello, Docker! by Kiran M".
-
-#### **nginx.conf**
-
-An Nginx configuration file that serves the `index.html` page and listens on port 80.
-
-Created the html and conf file for nginx:
-![image](https://github.com/user-attachments/assets/eabd5593-379c-4ca8-96a9-dda29287292f)
+Docker Compose Evidences:
+Basic HTML Page : index.html
+- Content of this file is a simple HTML page, e.g., "Hello, Docker ! "
+  Nginx Configuration :  `nginx.conf`
+- This file is used to configure Nginx to serve the `index.html` file on port 80 and enable HTTPS support on port 443.
+Dockerfile build:
+![image](https://github.com/user-attachments/assets/47a5264a-eaab-41ce-9924-15b061896e59)
 
  
-Installed docker on EC2:
- ![image](https://github.com/user-attachments/assets/b0efbd32-b4c3-439f-8bd6-8d2ee0fea5d8)
+Docker Compose
+ ![image](https://github.com/user-attachments/assets/9582e0c5-8796-4802-b152-ddbf0fd97e33)
 
-Created Docker Image:
- ![image](https://github.com/user-attachments/assets/18c6e8d2-5cc7-42a1-a5e0-7eb166d48c5d)
 
-Docker Images
- ![image](https://github.com/user-attachments/assets/e5a8278f-9786-4b7d-8661-cbb0cc676e64)
+Cert: 
+![image](https://github.com/user-attachments/assets/39184491-dcb0-4dd3-ab5e-1e7c77972806)
 
-Nginix server running from Doker image:
- ![image](https://github.com/user-attachments/assets/a49b5bc1-1dd4-4b93-bb91-2e2fa048ba85)
+Output directed to Port 80:
+![image](https://github.com/user-attachments/assets/a56dc0f6-30bf-4480-96a2-b866661d2080)
 
-Created Repo on ECR:
- ![image](https://github.com/user-attachments/assets/e6f2bcdb-f7b2-45e9-942d-0d4bd94de6f4)
-
-Pushed the Docker image onto ECR:
-![image](https://github.com/user-attachments/assets/c3effddb-e29f-4516-8a0e-964032080dc9)
-
+ 
+Output directed to port 443:
+![image](https://github.com/user-attachments/assets/4411df8d-d93c-4222-99b8-1596a35d35c3)
